@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Game from "./components/game/Game";
+import "./App.css";
+import Kodiaks from "./components/images/kodiaks.jpg";
+import Kong from "./components/images/kong.jpg";
+import Pride from "./components/images/pride.jpg";
+import Wolfpack from "./components/images/wolfpack.jpg";
 
-function App() {
+function App(props) {
+  const raccoons = {
+    name: "Anchorage Kodiaks",
+    logoSrc: Kodiaks,
+  };
+
+  const squirrels = {
+    name: "Indianapolis Kong",
+    logoSrc: Kong,
+  };
+
+  const bunnies = {
+    name: "Phoenix Pride",
+    logoSrc: Pride,
+  };
+
+  const hounds = {
+    name: "Minneapolis Wolfpack",
+    logoSrc: Wolfpack,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game
+        venue="Blackwater Arena"
+        homeTeam={squirrels}
+        visitingTeam={raccoons}
+      />
+      <Game
+        venue="877-CASH-NOW Stadium"
+        homeTeam={bunnies}
+        visitingTeam={hounds}
+      />
     </div>
   );
 }
